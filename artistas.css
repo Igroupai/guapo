@@ -137,7 +137,7 @@
   color: rgba(245, 240, 232, 0.4);
   background: none;
   border: none;
-  cursor: none;
+  cursor: pointer;
   text-transform: uppercase;
   transition: color 0.2s;
 }
@@ -154,7 +154,7 @@
   border: none;
   color: rgba(245, 240, 232, 0.3);
   font-size: 2rem;
-  cursor: none;
+  cursor: pointer;
   padding: 1.5rem;
   transition: color 0.2s;
   line-height: 1;
@@ -210,6 +210,4 @@
   }
 }
 
-.masonry-item img { width:100%; height:auto; display:block; }
-@media(max-width:768px){ .masonry-grid{ columns:1; } }
 
