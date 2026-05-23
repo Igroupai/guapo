@@ -1,17 +1,20 @@
 /* GUAPO — MAIN JS */
 
 // HERO SLIDESHOW
-const heroImgs = document.querySelectorAll('.hero-img');
-const heroCounter = document.getElementById('heroCounter');
-let currentSlide = 0;
-if (heroImgs.length > 0) {
+function runSlideshow(selector, counterId, interval) {
+  const imgs = document.querySelectorAll(selector);
+  if (!imgs.length) return;
+  const counter = counterId ? document.getElementById(counterId) : null;
+  let i = 0;
   setInterval(() => {
-    heroImgs[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % heroImgs.length;
-    heroImgs[currentSlide].classList.add('active');
-    if (heroCounter) heroCounter.textContent = `0${currentSlide+1} / 0${heroImgs.length}`;
-  }, 4000);
+    imgs[i].classList.remove('active');
+    i = (i + 1) % imgs.length;
+    imgs[i].classList.add('active');
+    if (counter) counter.textContent = `0${i+1} / 0${imgs.length}`;
+  }, interval);
 }
+runSlideshow('.hero-img', 'heroCounter', 4000);
+runSlideshow('.ah-img',   'ahCounter',   5000);
 
 // SCROLL FADE-IN
 const observer = new IntersectionObserver((entries) => {
