@@ -60,23 +60,32 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify
 .gallery-tag { font-family:var(--font-mono); font-size:0.55rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--black); background:rgba(200,169,110,0.95); padding:0.3rem 0.7rem; opacity:0; transform:translateY(8px); transition:all 0.3s ease; }
 .gallery-item:hover .gallery-tag { opacity:1; transform:translateY(0); }
 
-/* SPLIT / ABOUT */
-.split-section { display:grid; grid-template-columns:1fr 1fr; min-height:60vh; border-top:1px solid var(--border); }
-.split-left { padding:6rem 3rem; border-right:1px solid var(--border); display:flex; flex-direction:column; justify-content:center; }
-.split-right { padding:6rem 3rem; background:rgba(200,169,110,0.04); display:flex; flex-direction:column; justify-content:center; }
-.split-left .section-label { margin-bottom:2rem; }
+/* ABOUT (Somos Art Dealers) */
+.about-section { padding:6rem 3rem; border-top:1px solid var(--border); }
+.about-header { margin-bottom:4rem; }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; margin-bottom:6rem; }
+.about-block { display:flex; flex-direction:column; }
+.about-img { aspect-ratio:4/3; overflow:hidden; margin-bottom:2rem; }
+.about-img img { width:100%; height:100%; object-fit:cover; filter:grayscale(15%); transition:filter 0.5s ease, transform 0.6s ease; }
+.about-block:hover .about-img img { filter:grayscale(0%); transform:scale(1.02); }
+.about-title { font-family:var(--font-display); font-size:1.6rem; letter-spacing:0.2em; color:var(--white); margin-bottom:1.5rem; }
+.about-body { font-size:1.05rem; line-height:1.7; color:rgba(245,240,232,0.6); }
+.about-block .about-body + .about-body { margin-top:1rem; }
+.about-body em { font-style:italic; color:var(--accent); }
+.about-cta { margin-top:2rem; align-self:flex-start; }
+.about-quote { text-align:center; padding:4rem 0 0; border-top:1px solid var(--border); }
 .big-quote { font-family:var(--font-serif); font-size:clamp(1.8rem,3.5vw,3.2rem); font-weight:300; line-height:1.2; font-style:italic; }
 .big-quote span { color:var(--accent); }
-.attr { margin-top:2rem; font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.3em; text-transform:uppercase; color:rgba(245,240,232,0.3); }
-.about-body { margin-top:3rem; font-size:1.1rem; line-height:1.8; color:rgba(245,240,232,0.5); max-width:380px; }
-.coming-number { font-family:var(--font-display); font-size:clamp(4rem,8vw,7rem); letter-spacing:0.1em; color:var(--border); line-height:1; }
-.coming-label { font-family:var(--font-serif); font-size:1.3rem; font-style:italic; color:rgba(245,240,232,0.5); margin-top:0.5rem; }
+.attr { margin-top:1.5rem; font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.3em; text-transform:uppercase; color:rgba(245,240,232,0.3); }
+
+/* FRAMING */
+.framing-section { border-top:1px solid var(--border); }
+.framing-grid { display:grid; grid-template-columns:1fr 1fr; min-height:70vh; }
+.framing-img { overflow:hidden; position:relative; }
+.framing-img img { width:100%; height:100%; object-fit:cover; filter:grayscale(20%); }
+.framing-content { padding:6rem 3rem; background:rgba(200,169,110,0.04); display:flex; flex-direction:column; justify-content:center; }
 .coming-divider { height:1px; background:var(--border); margin:2rem 0; width:80px; }
-.coming-categories { font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; color:rgba(245,240,232,0.3); line-height:2.2; }
-.coming-badge { display:inline-block; margin-top:2rem; font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.3em; text-transform:uppercase; padding:0.6rem 1.2rem; border:1px solid var(--accent); color:var(--accent); }
-.split-left .about-body + .about-body { margin-top:1.2rem; }
-.split-left .about-body em { font-style:italic; color:var(--accent); }
-.store-title { font-family:var(--font-serif); font-size:2.2rem; font-weight:300; font-style:italic; margin-top:0.8rem; }
+.coming-badge { display:inline-block; margin-top:2rem; font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.3em; text-transform:uppercase; padding:0.6rem 1.2rem; border:1px solid var(--accent); color:var(--accent); align-self:flex-start; }
 .store-list { list-style:none; margin-top:1.5rem; display:flex; flex-direction:column; gap:1rem; }
 .store-list li { display:flex; gap:1rem; align-items:flex-start; font-family:var(--font-serif); font-size:1rem; line-height:1.5; color:rgba(245,240,232,0.6); border-top:1px solid var(--border); padding-top:1rem; }
 .store-tag { font-family:var(--font-mono); font-size:0.55rem; letter-spacing:0.2em; color:var(--accent); flex-shrink:0; padding-top:0.25rem; }
@@ -142,9 +151,11 @@ footer { padding:4rem 3rem 2rem; border-top:1px solid var(--border); display:gri
   .nav-links a{font-size:1rem}
   .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}
   .gallery-item:first-child{grid-row:auto}
-  .split-section{grid-template-columns:1fr}
-  .split-left{border-right:none;border-bottom:1px solid var(--border);padding:3rem 1.5rem}
-  .split-right{padding:3rem 1.5rem}
+  .about-section{padding:4rem 1.5rem}
+  .about-grid{grid-template-columns:1fr;gap:3rem;margin-bottom:4rem}
+  .framing-grid{grid-template-columns:1fr;min-height:auto}
+  .framing-img{aspect-ratio:4/3}
+  .framing-content{padding:3rem 1.5rem}
   .gallery-section,.artists-section{padding:4rem 1.5rem}
   .artists-row{grid-template-columns:1fr}
   footer{grid-template-columns:1fr;gap:2rem;padding:3rem 1.5rem 1.5rem}
