@@ -74,6 +74,18 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify
 .coming-divider { height:1px; background:var(--border); margin:2rem 0; width:80px; }
 .coming-categories { font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; color:rgba(245,240,232,0.3); line-height:2.2; }
 .coming-badge { display:inline-block; margin-top:2rem; font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.3em; text-transform:uppercase; padding:0.6rem 1.2rem; border:1px solid var(--accent); color:var(--accent); }
+.split-left .about-body + .about-body { margin-top:1.2rem; }
+.split-left .about-body em { font-style:italic; color:var(--accent); }
+.store-title { font-family:var(--font-serif); font-size:2.2rem; font-weight:300; font-style:italic; margin-top:0.8rem; }
+.store-list { list-style:none; margin-top:1.5rem; display:flex; flex-direction:column; gap:1rem; }
+.store-list li { display:flex; gap:1rem; align-items:flex-start; font-family:var(--font-serif); font-size:1rem; line-height:1.5; color:rgba(245,240,232,0.6); border-top:1px solid var(--border); padding-top:1rem; }
+.store-tag { font-family:var(--font-mono); font-size:0.55rem; letter-spacing:0.2em; color:var(--accent); flex-shrink:0; padding-top:0.25rem; }
+.store-cta { text-decoration:none; transition:background 0.2s, color 0.2s; }
+.store-cta:hover { background:var(--accent); color:var(--black); }
+.open-call { margin-top:3rem; display:flex; justify-content:space-between; align-items:center; gap:3rem; padding:3rem; border:1px solid var(--border); }
+.open-call-text { font-family:var(--font-serif); font-size:1.3rem; font-style:italic; font-weight:300; line-height:1.5; color:rgba(245,240,232,0.7); max-width:640px; }
+.open-call-text em { color:var(--accent); }
+@media(max-width:900px){ .open-call{flex-direction:column;align-items:flex-start;gap:1.5rem;padding:2rem} .open-call-text{font-size:1.1rem} }
 
 /* ARTISTS */
 .artists-section { padding:6rem 3rem; border-top:1px solid var(--border); }
