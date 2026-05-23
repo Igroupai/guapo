@@ -30,6 +30,33 @@ if (navToggle && navLinks) {
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 }
 
+// LIGHTBOX (zoom view)
+const lb = document.getElementById('lightbox');
+if (lb) {
+  const lbImg = document.getElementById('lbImg');
+  const lbC = document.getElementById('lbCounter');
+  const zoomables = document.querySelectorAll('.zoomable');
+  const images = Array.from(zoomables).map(el => {
+    const img = el.querySelector('img');
+    return img ? img.src : '';
+  }).filter(Boolean);
+  let cur = 0;
+  const open = i => { cur = i; lbImg.src = images[i]; lbC.textContent = `${i+1} / ${images.length}`; lb.classList.add('open'); document.body.style.overflow = 'hidden'; };
+  const close = () => { lb.classList.remove('open'); document.body.style.overflow = ''; };
+  const navi = d => { cur = (cur + d + images.length) % images.length; lbImg.src = images[cur]; lbC.textContent = `${cur+1} / ${images.length}`; };
+  zoomables.forEach((el, i) => el.addEventListener('click', e => { e.preventDefault(); open(i); }));
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbPrev').addEventListener('click', () => navi(-1));
+  document.getElementById('lbNext').addEventListener('click', () => navi(1));
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') navi(-1);
+    if (e.key === 'ArrowRight') navi(1);
+  });
+}
+
 // NAV SCROLL
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
