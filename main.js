@@ -35,15 +35,38 @@ const lb = document.getElementById('lightbox');
 if (lb) {
   const lbImg = document.getElementById('lbImg');
   const lbC = document.getElementById('lbCounter');
+  const lbInfo = document.getElementById('lbInfo');
+  const lbName = document.getElementById('lbName');
+  const lbPrice = document.getElementById('lbPrice');
+  const lbMeta = document.getElementById('lbMeta');
   const zoomables = document.querySelectorAll('.zoomable');
-  const images = Array.from(zoomables).map(el => {
+  const items = Array.from(zoomables).map(el => {
     const img = el.querySelector('img');
-    return img ? img.src : '';
-  }).filter(Boolean);
+    const card = el.closest('.shop-card');
+    const name = card && card.querySelector('.shop-name');
+    const price = card && card.querySelector('.shop-price');
+    const meta = card ? Array.from(card.querySelectorAll('.shop-meta li')).map(li => li.textContent.trim()) : [];
+    return {
+      src: img ? img.src : '',
+      name: name ? name.textContent.trim() : '',
+      price: price ? price.innerHTML.trim() : '',
+      meta
+    };
+  });
   let cur = 0;
-  const open = i => { cur = i; lbImg.src = images[i]; lbC.textContent = `${i+1} / ${images.length}`; lb.classList.add('open'); document.body.style.overflow = 'hidden'; };
+  const render = i => {
+    const it = items[i];
+    lbImg.src = it.src;
+    lbC.textContent = `${i+1} / ${items.length}`;
+    const hasInfo = it.name || it.price || it.meta.length;
+    lbInfo.classList.toggle('visible', !!hasInfo);
+    lbName.textContent = it.name;
+    lbPrice.innerHTML = it.price;
+    lbMeta.innerHTML = it.meta.map(m => `<li>${m}</li>`).join('');
+  };
+  const open = i => { cur = i; render(i); lb.classList.add('open'); document.body.style.overflow = 'hidden'; };
   const close = () => { lb.classList.remove('open'); document.body.style.overflow = ''; };
-  const navi = d => { cur = (cur + d + images.length) % images.length; lbImg.src = images[cur]; lbC.textContent = `${cur+1} / ${images.length}`; };
+  const navi = d => { cur = (cur + d + items.length) % items.length; render(cur); };
   zoomables.forEach((el, i) => el.addEventListener('click', e => { e.preventDefault(); open(i); }));
   document.getElementById('lbClose').addEventListener('click', close);
   document.getElementById('lbPrev').addEventListener('click', () => navi(-1));
