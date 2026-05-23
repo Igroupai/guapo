@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artistas — GUAPO Art Gallery</title>
+<meta name="description" content="Un panorama del arte contemporáneo latinoamericano. Moderno, independiente, disruptivo.">
+<meta property="og:title" content="Artistas — GUAPO Art Gallery">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://guapo.igapp.cl/artistas">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/f547a797-ea5a-4a18-99ac-c68c4986fd3a/1000005525.jpg">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Bebas+Neue&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="artistas.css">
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">GUAPO</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="artistas.html" class="active">Artistas</a></li>
+    <li><a href="index.html#store">Store</a></li>
+    <li><a href="index.html#about">About</a></li>
+  </ul>
+</nav>
+
+<!-- HERO + MANIFESTO -->
+<section class="artistas-hero">
+  <img
+    class="artistas-hero-img"
+    src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/f547a797-ea5a-4a18-99ac-c68c4986fd3a/1000005525.jpg"
+    alt="GUAPO Artistas">
+  <div class="artistas-hero-overlay"></div>
+  <div class="artistas-hero-content">
+    <p class="section-label">Manifiesto</p>
+    <ul class="manifesto-list">
+      <li>Un panorama del Arte contemporáneo Latinoamericano</li>
+      <li>Moderno e independiente</li>
+      <li>Con un discurso social desde lo periférico y lo disruptivo</li>
+      <li>Cercano a la intimidad / near of intimacy</li>
+      <li>Sugestivo · Misterioso · Intrigante</li>
+      <li>Uncanny &amp; LGTBQ+ art</li>
+    </ul>
+  </div>
+</section>
+
+<!-- GALLERY MASONRY -->
+<section class="masonry-section fade-in">
+  <div class="section-header">
+    <div>
+      <p class="section-label">Colección</p>
+      <h2 class="section-title">Obras</h2>
+    </div>
+  </div>
+
+  <div class="masonry-grid" id="masonryGrid">
+    <div class="masonry-item" data-index="0">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/c5a98489-a24d-40b7-aeda-30b576c204d6/1000002055.jpg" alt="Obra 1">
+    </div>
+    <div class="masonry-item" data-index="1">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/4c93a26f-676a-42ec-96bf-1fb6ee534f40/1000002046.jpg" alt="Obra 2">
+    </div>
+    <div class="masonry-item" data-index="2">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/5d20994c-4656-4583-9d8e-a1269e39cfe1/1000002047.jpg" alt="Obra 3">
+    </div>
+    <div class="masonry-item" data-index="3">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/bb9ac159-2f06-4047-9bea-cd2653e5553d/1000002049.jpg" alt="Obra 4">
+    </div>
+    <div class="masonry-item" data-index="4">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/a27a603b-f799-4457-bdb9-84355e07bef4/1000002050.jpg" alt="Obra 5">
+    </div>
+    <div class="masonry-item" data-index="5">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/7e912579-247f-4747-8c67-6c6c523a3660/1000002051.jpg" alt="Obra 6">
+    </div>
+    <div class="masonry-item" data-index="6">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/c9cd11b7-c4bc-4bd3-a75b-1088df0d3752/1000002052.jpg" alt="Obra 7">
+    </div>
+    <div class="masonry-item" data-index="7">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/0c77deb8-f925-41e9-9999-699dca2ae8b7/1000002053.jpg" alt="Obra 8">
+    </div>
+    <div class="masonry-item" data-index="8">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/0a5f325a-24ac-45be-9bb9-e0e999fd84f8/1000002054.jpg" alt="Obra 9">
+    </div>
+    <div class="masonry-item" data-index="9">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/60c4e32f-ef17-4a65-8b3f-a534bd6ae6f3/1000002056.jpg" alt="Obra 10">
+    </div>
+    <div class="masonry-item" data-index="10">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/7290a25b-a06d-46d0-aa75-e0d185bd85b2/1000002057.jpg" alt="Obra 11">
+    </div>
+    <div class="masonry-item" data-index="11">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/c8b85024-0aac-4ba4-a192-b9637497f7d9/1000002058.jpg" alt="Obra 12">
+    </div>
+    <div class="masonry-item" data-index="12">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/9990c708-4502-4a84-8e47-5bf7fbde6317/1000002059.jpg" alt="Obra 13">
+    </div>
+    <div class="masonry-item" data-index="13">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/3df64cf5-c839-473f-b0b5-c7e111831cdd/1000002237.jpg" alt="Obra 14">
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lbClose">✕ cerrar</button>
+  <button class="lightbox-nav lightbox-prev" id="lbPrev">&#8592;</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lbNext">&#8594;</button>
+  <div class="lightbox-counter" id="lbCounter"></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div class="footer-logo">GUAPO</div>
+    <div class="footer-tagline">a gallery of photography<br>&amp; contemporary south american art</div>
+  </div>
+  <div class="footer-col">
+    <h4>Explorar</h4>
+    <ul>
+      <li><a href="index.html#gallery">Galería</a></li>
+      <li><a href="artistas.html">Artistas</a></li>
+      <li><a href="index.html#store">Store</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Contacto</h4>
+    <ul>
+      <li><a href="mailto:hola@guapo.art">hola@guapo.art</a></li>
+      <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2024 GUAPO ART GALLERY — TODOS LOS DERECHOS RESERVADOS</span>
+    <div class="social-links">
+      <a href="https://instagram.com" target="_blank" rel="noopener">IG</a>
+      <a href="https://facebook.com" target="_blank" rel="noopener">FB</a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+  const items = document.querySelectorAll('.masonry-item');
+  const images = Array.from(items).map(el => el.querySelector('img').src);
+  let currentLb = 0;
+
+  const lightbox  = document.getElementById('lightbox');
+  const lbImg     = document.getElementById('lbImg');
+  const lbCounter = document.getElementById('lbCounter');
+
+  function openLightbox(index) {
+    currentLb = index;
+    lbImg.src = images[index];
+    lbCounter.textContent = `${index + 1} / ${images.length}`;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function lbNavigate(dir) {
+    currentLb = (currentLb + dir + images.length) % images.length;
+    lbImg.src = images[currentLb];
+    lbCounter.textContent = `${currentLb + 1} / ${images.length}`;
+  }
+
+  items.forEach((item, i) => item.addEventListener('click', () => openLightbox(i)));
+
+  document.getElementById('lbClose').addEventListener('click', closeLightbox);
+  document.getElementById('lbPrev').addEventListener('click', () => lbNavigate(-1));
+  document.getElementById('lbNext').addEventListener('click', () => lbNavigate(1));
+
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape')      closeLightbox();
+    if (e.key === 'ArrowLeft')   lbNavigate(-1);
+    if (e.key === 'ArrowRight')  lbNavigate(1);
+  });
+</script>
+</body>
+</html>
