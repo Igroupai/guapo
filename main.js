@@ -1,28 +1,25 @@
 /* GUAPO — MAIN JS */
 
-// === HERO SLIDESHOW ===
+// HERO SLIDESHOW
 const heroImgs = document.querySelectorAll('.hero-img');
 const heroCounter = document.getElementById('heroCounter');
 let currentSlide = 0;
-
 if (heroImgs.length > 0) {
   setInterval(() => {
     heroImgs[currentSlide].classList.remove('active');
     currentSlide = (currentSlide + 1) % heroImgs.length;
     heroImgs[currentSlide].classList.add('active');
-    if (heroCounter) {
-      heroCounter.textContent = `0${currentSlide + 1} / 0${heroImgs.length}`;
-    }
+    if (heroCounter) heroCounter.textContent = `0${currentSlide+1} / 0${heroImgs.length}`;
   }, 4000);
 }
 
-// === SCROLL FADE-IN ===
+// SCROLL FADE-IN
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.12 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-// === MOBILE NAV ===
+// MOBILE NAV
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 if (navToggle && navLinks) {
@@ -30,7 +27,7 @@ if (navToggle && navLinks) {
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 }
 
-// === NAV SCROLL ===
+// NAV SCROLL
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 80) {
