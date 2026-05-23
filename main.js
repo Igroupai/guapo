@@ -1,39 +1,4 @@
-/* ===========================
-   GUAPO ART GALLERY — MAIN JS
-   =========================== */
-
-// === CUSTOM CURSOR ===
-const cursor = document.getElementById('cur');
-const ring = document.getElementById('ring');
-let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
-
-if (cursor && ring) {
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursor.style.transform = `translate(${mouseX - 4}px, ${mouseY - 4}px)`;
-  });
-
-  function animateRing() {
-    ringX += (mouseX - ringX) * 0.12;
-    ringY += (mouseY - ringY) * 0.12;
-    ring.style.transform = `translate(${ringX - 18}px, ${ringY - 18}px)`;
-    requestAnimationFrame(animateRing);
-  }
-  animateRing();
-
-  // Cursor scale on interactive elements
-  document.querySelectorAll('a, button, .gallery-item, .artist-card').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.style.transform += ' scale(2)';
-      ring.style.transform += ' scale(1.5)';
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.style.transform = cursor.style.transform.replace(' scale(2)', '');
-      ring.style.transform = ring.style.transform.replace(' scale(1.5)', '');
-    });
-  });
-}
+/* GUAPO — MAIN JS */
 
 // === HERO SLIDESHOW ===
 const heroImgs = document.querySelectorAll('.hero-img');
@@ -46,49 +11,31 @@ if (heroImgs.length > 0) {
     currentSlide = (currentSlide + 1) % heroImgs.length;
     heroImgs[currentSlide].classList.add('active');
     if (heroCounter) {
-      const n = currentSlide + 1;
-      const total = heroImgs.length;
-      heroCounter.textContent = `0${n} / 0${total}`;
+      heroCounter.textContent = `0${currentSlide + 1} / 0${heroImgs.length}`;
     }
-  }, 3500);
+  }, 4000);
 }
 
 // === SCROLL FADE-IN ===
-const fadeEls = document.querySelectorAll('.fade-in');
-
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.12 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-fadeEls.forEach(el => observer.observe(el));
-
-// === MOBILE NAV TOGGLE ===
+// === MOBILE NAV ===
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
-
 if (navToggle && navLinks) {
-  navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-
-  // Close nav on link click (mobile)
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-    });
-  });
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 }
 
-// === NAV SCROLL BLEND ===
+// === NAV SCROLL ===
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 80) {
     nav.style.mixBlendMode = 'normal';
-    nav.style.background = 'rgba(10,10,10,0.9)';
+    nav.style.background = 'rgba(10,10,10,0.92)';
     nav.style.backdropFilter = 'blur(8px)';
   } else {
     nav.style.mixBlendMode = 'difference';
