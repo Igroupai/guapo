@@ -184,6 +184,14 @@ footer { padding:4rem 3rem 2rem; border-top:1px solid var(--border); display:gri
 
 /* RESPONSIVE */
 @media(max-width:900px){
+  /* TYPOGRAPHY BOOST FOR MOBILE */
+  .section-label,.hero-eyebrow,.footer-col h4,.footer-copy,.social-links a,.artist-num,.artist-origin,.coming-categories,.coming-badge,.btn-primary,.btn-ghost,.gallery-tag,.shop-price,.shop-meta li,.lb-meta li,.lightbox-counter,.hero-counter,.artistas-hero-counter,.marquee-item{ font-size:0.8rem; letter-spacing:0.25em; }
+  .hero-sub,.about-body,.open-call-text,.store-list li,.footer-col ul a,.footer-tagline,.shop-name,.lb-price{ font-size:1.15rem; line-height:1.6; }
+  .section-title{ font-size:2rem; }
+  .about-title{ font-size:1.5rem; letter-spacing:0.15em; }
+  .lb-name{ font-size:1.5rem; }
+  .manifesto-list li{ font-size:1.15rem; }
+
   .hero{grid-template-columns:1fr}
   .hero-right{position:absolute;inset:0;z-index:0}
   .hero-left{position:relative;z-index:1;padding:7rem 1.5rem 3rem;background:linear-gradient(to top,rgba(10,10,10,0.95) 60%,transparent);justify-content:flex-end;min-height:100vh}
@@ -191,7 +199,7 @@ footer { padding:4rem 3rem 2rem; border-top:1px solid var(--border); display:gri
   .nav-toggle{display:flex}
   .nav-links{display:none;position:fixed;inset:0;background:var(--black);flex-direction:column;align-items:center;justify-content:center;gap:3rem;z-index:99}
   .nav-links.open{display:flex}
-  .nav-links a{font-size:1rem}
+  .nav-links a{font-size:1.3rem;letter-spacing:0.2em}
   .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}
   .gallery-item:first-child{grid-row:auto}
   .about-section{padding:4rem 1.5rem}
@@ -207,4 +215,7 @@ footer { padding:4rem 3rem 2rem; border-top:1px solid var(--border); display:gri
 @media(max-width:480px){
   .gallery-grid{grid-template-columns:1fr;grid-template-rows:repeat(5,220px)}
   .hero-title{font-size:5rem}
+  .hero-sub,.about-body,.open-call-text,.store-list li,.footer-col ul a,.footer-tagline,.shop-name,.lb-price{ font-size:1.1rem; }
+  .manifesto-list li{ font-size:1.05rem; }
+  .footer-cta-body{ font-size:1.1rem; }
 }

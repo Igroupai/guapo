@@ -180,7 +180,9 @@
     border-top: 1px solid rgba(245,240,232,0.12);
     padding-top: 2rem;
   }
-  .artistas-hero-counter { right: 1.5rem; }
+  .artistas-hero-text .hero-eyebrow { font-size: 0.8rem; letter-spacing: 0.3em; }
+  .artistas-hero-counter { right: 1.5rem; font-size: 0.8rem; }
+  .manifesto-list li { font-size: 1.15rem; line-height: 1.5; padding: 1rem 0; }
   .masonry-grid { columns: 2; }
   .masonry-section { padding: 3rem 1rem; }
   .lightbox-nav { font-size: 1.5rem; padding: 1rem; }
@@ -189,6 +191,7 @@
 @media (max-width: 480px) {
   .masonry-grid { columns: 1; }
   .artistas-title { font-size: 4.5rem; }
+  .manifesto-list li { font-size: 1.05rem; }
   .lightbox-close { top: 1rem; right: 1rem; }
 }
 
