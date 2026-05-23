@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GUAPO — Art Gallery</title>
+<meta name="description" content="Un panorama del arte contemporáneo latinoamericano. Fotografía, pintura y expresión sin fronteras.">
+<meta property="og:title" content="GUAPO — Art Gallery">
+<meta property="og:description" content="A gallery of photography and contemporary South American art.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://guapo.igapp.cl">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/def03ab5-58c5-4c1f-8324-c1703a32ae38/_91402743-e27d-4405-970f-a6ff49ecc6eb.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Bebas+Neue&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<nav>
+  <a href="#" class="nav-logo">GUAPO</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#artistas">Artistas</a></li>
+    <li><a href="#store">Store</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Arte Contemporáneo Latinoamericano</p>
+    <h1 class="hero-title">
+      GUAPO
+      <em>Art Gallery</em>
+    </h1>
+    <p class="hero-sub">Un panorama del arte contemporáneo latinoamericano. Fotografía, pintura y expresión sin fronteras.</p>
+    <div class="hero-cta">
+      <a href="#gallery" class="btn-primary">Ver Colección</a>
+      <a href="#about" class="btn-ghost">Sobre nosotros</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-image-stack">
+      <img class="hero-img active" src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/def03ab5-58c5-4c1f-8324-c1703a32ae38/_91402743-e27d-4405-970f-a6ff49ecc6eb.jpeg" alt="Obra 1">
+      <img class="hero-img" src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/186da9c5-10e5-4dfa-9a7c-7ae2f85b4e6f/1000005522.jpg" alt="Obra 2">
+      <img class="hero-img" src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/b21dfeba-77de-4e40-927d-9f56377e46f8/1000005523.jpg" alt="Obra 3">
+      <img class="hero-img" src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/9194df65-5a43-4869-9f50-34c0b262177e/1000005524.jpg" alt="Obra 4">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-counter" id="heroCounter">01 / 04</div>
+  </div>
+</section>
+
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">Arte Contemporáneo <span class="marquee-dot">✦</span> Fotografía <span class="marquee-dot">✦</span> Latinoamérica <span class="marquee-dot">✦</span> Galería <span class="marquee-dot">✦</span> Artistas <span class="marquee-dot">✦</span> Coming Soon <span class="marquee-dot">✦</span> Arte Contemporáneo <span class="marquee-dot">✦</span> Fotografía <span class="marquee-dot">✦</span> Latinoamérica <span class="marquee-dot">✦</span> Galería <span class="marquee-dot">✦</span> Artistas <span class="marquee-dot">✦</span> Coming Soon</span>
+  </div>
+</div>
+
+<section class="gallery-section fade-in" id="gallery">
+  <div class="section-header">
+    <div>
+      <p class="section-label">Exposición Actual</p>
+      <h2 class="section-title">Obras Seleccionadas</h2>
+    </div>
+    <a href="#store" class="btn-ghost">Ver todo</a>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/def03ab5-58c5-4c1f-8324-c1703a32ae38/_91402743-e27d-4405-970f-a6ff49ecc6eb.jpeg" alt="Obra principal">
+      <div class="gallery-overlay"><span class="gallery-tag">Serie I</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/186da9c5-10e5-4dfa-9a7c-7ae2f85b4e6f/1000005522.jpg" alt="Obra 2">
+      <div class="gallery-overlay"><span class="gallery-tag">Fotografía</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/b21dfeba-77de-4e40-927d-9f56377e46f8/1000005523.jpg" alt="Obra 3">
+      <div class="gallery-overlay"><span class="gallery-tag">Contemporáneo</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/9194df65-5a43-4869-9f50-34c0b262177e/1000005524.jpg" alt="Obra 4">
+      <div class="gallery-overlay"><span class="gallery-tag">Serie II</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.squarespace-cdn.com/content/v1/66146a2f977a5e716d99aeeb/3f6bfdce-b946-4020-8547-32100e018728/1000005525.jpg" alt="Obra 5">
+      <div class="gallery-overlay"><span class="gallery-tag">Surreal</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="split-section fade-in" id="about">
+  <div class="split-left">
+    <p class="section-label" style="margin-bottom:2rem">Manifiesto</p>
+    <blockquote class="big-quote">
+      "Una roca de carbón<br>convertida en un <span>diamante</span>"
+    </blockquote>
+    <p class="attr">— GUAPO, 2024</p>
+    <p class="about-body">
+      Una galería de fotografía y arte contemporáneo sudamericano. Curada con intención, presentada sin fronteras.
+    </p>
+  </div>
+  <div class="split-right" id="store">
+    <div class="coming-number">2024</div>
+    <div class="coming-label">Próxima Exposición</div>
+    <div class="coming-divider"></div>
+    <p class="coming-categories">
+      FOTOGRAFÍA /<br>PINTURA /<br>INSTALACIÓN /<br>ARTE DIGITAL
+    </p>
+    <div class="coming-badge">COMING SOON</div>
+  </div>
+</section>
+
+<section class="artists-section fade-in" id="artistas">
+  <div class="section-header">
+    <div>
+      <p class="section-label">Representados</p>
+      <h2 class="section-title">Artistas</h2>
+    </div>
+  </div>
+  <div class="artists-row">
+    <div class="artist-card">
+      <div class="artist-num">01</div>
+      <div class="artist-name">Anónimo Urbano</div>
+      <div class="artist-origin">Santiago, Chile</div>
+      <div class="artist-line"></div>
+    </div>
+    <div class="artist-card">
+      <div class="artist-num">02</div>
+      <div class="artist-name">Luz Quebrada</div>
+      <div class="artist-origin">Buenos Aires, Argentina</div>
+      <div class="artist-line"></div>
+    </div>
+    <div class="artist-card">
+      <div class="artist-num">03</div>
+      <div class="artist-name">Tierra Cruda</div>
+      <div class="artist-origin">Bogotá, Colombia</div>
+      <div class="artist-line"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">
+    <div class="footer-logo">GUAPO</div>
+    <div class="footer-tagline">a gallery of photography<br>& contemporary south american art</div>
+  </div>
+  <div class="footer-col">
+    <h4>Explorar</h4>
+    <ul>
+      <li><a href="#gallery">Galería</a></li>
+      <li><a href="#artistas">Artistas</a></li>
+      <li><a href="#store">Store</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Contacto</h4>
+    <ul>
+      <li><a href="mailto:hola@guapo.art">hola@guapo.art</a></li>
+      <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2024 GUAPO ART GALLERY — TODOS LOS DERECHOS RESERVADOS</span>
+    <div class="social-links">
+      <a href="https://instagram.com" target="_blank" rel="noopener">IG</a>
+      <a href="https://facebook.com" target="_blank" rel="noopener">FB</a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
