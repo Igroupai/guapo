@@ -156,12 +156,15 @@ footer { padding:4rem 3rem 2rem; border-top:1px solid var(--border); display:gri
 .lb-price .shop-sale { color:var(--accent); margin-right:0.4rem; }
 .lb-meta { list-style:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid var(--border); display:flex; flex-direction:column; gap:0.5rem; }
 .lb-meta li { font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(245,240,232,0.5); line-height:1.5; }
+.lb-request { display:inline-block; margin-top:1.5rem; font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.3em; text-transform:uppercase; padding:0.9rem 1.4rem; border:1px solid var(--accent); color:var(--accent); text-decoration:none; align-self:flex-start; transition:background 0.2s, color 0.2s; }
+.lb-request:hover { background:var(--accent); color:var(--black); }
 @media(max-width:900px){
   .lightbox-content { flex-direction:column; gap:1.5rem; padding:5rem 1.5rem 1.5rem; overflow-y:auto; max-height:90vh; }
   .lightbox-content img { max-width:90vw; max-height:55vh; }
   .lightbox-info { width:100%; max-width:90vw; gap:0.6rem; }
   .lb-name { font-size:1.3rem; }
   .lb-meta { margin-top:0.8rem; padding-top:0.8rem; }
+  .lb-request { font-size:0.8rem; padding:1rem 1.4rem; }
 }
 .lightbox-close { position:absolute; top:1.5rem; right:1.5rem; width:52px; height:52px; display:flex; align-items:center; justify-content:center; font-family:sans-serif; font-size:1.4rem; line-height:1; color:var(--white); background:rgba(245,240,232,0.08); border:1px solid rgba(245,240,232,0.25); border-radius:50%; cursor:pointer; transition:background 0.2s, color 0.2s, transform 0.2s, border-color 0.2s; z-index:5; }
 .lightbox-close:hover { background:var(--accent); color:var(--black); border-color:var(--accent); transform:scale(1.06); }

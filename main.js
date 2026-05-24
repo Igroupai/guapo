@@ -55,6 +55,7 @@ if (navToggle && navLinks) {
 }
 
 // LIGHTBOX (zoom view)
+const WHATSAPP_NUMBER = '56900000000'; // TODO: reemplazar con número real (sin + ni espacios, formato 569XXXXXXXX)
 const lb = document.getElementById('lightbox');
 if (lb) {
   const lbImg = document.getElementById('lbImg');
@@ -63,6 +64,7 @@ if (lb) {
   const lbName = document.getElementById('lbName');
   const lbPrice = document.getElementById('lbPrice');
   const lbMeta = document.getElementById('lbMeta');
+  const lbRequest = document.getElementById('lbRequest');
   const zoomables = Array.from(document.querySelectorAll('.zoomable'));
   let cur = 0;
   const render = i => {
@@ -79,6 +81,16 @@ if (lb) {
     lbName.textContent = name ? name.textContent.trim() : '';
     lbPrice.innerHTML = price ? price.innerHTML.trim() : '';
     lbMeta.innerHTML = meta.map(li => `<li>${li.textContent.trim()}</li>`).join('');
+    if (lbRequest) {
+      const productName = name ? name.textContent.trim() : '';
+      if (productName) {
+        const msg = `Hola GUAPO, me interesa la obra "${productName}".\n\nMi nombre: \nMi email: `;
+        lbRequest.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+        lbRequest.style.display = '';
+      } else {
+        lbRequest.style.display = 'none';
+      }
+    }
   };
   const open = i => { cur = i; render(i); lb.classList.add('open'); document.body.style.overflow = 'hidden'; };
   const close = () => { lb.classList.remove('open'); document.body.style.overflow = ''; };
