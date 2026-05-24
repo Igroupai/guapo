@@ -27,7 +27,7 @@ renderUsdPrices();
 // HERO SLIDESHOW
 function runSlideshow(selector, counterId, interval) {
   const imgs = document.querySelectorAll(selector);
-  if (!imgs.length) return;
+  if (imgs.length < 2) return;
   const counter = counterId ? document.getElementById(counterId) : null;
   let i = 0;
   setInterval(() => {
