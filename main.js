@@ -1,5 +1,29 @@
 /* GUAPO — MAIN JS */
 
+// CLP → USD CONVERSION
+async function renderUsdPrices() {
+  const els = document.querySelectorAll('.shop-price[data-clp]');
+  if (!els.length) return;
+  const FALLBACK = 950;
+  let clpPerUsd = FALLBACK;
+  try {
+    const r = await fetch('https://open.er-api.com/v6/latest/USD');
+    const d = await r.json();
+    if (d && d.rates && d.rates.CLP) clpPerUsd = d.rates.CLP;
+  } catch (e) {}
+  els.forEach(el => {
+    const clp = parseInt(el.dataset.clp, 10);
+    if (!clp) return;
+    const usd = clp / clpPerUsd;
+    const txt = usd >= 100 ? Math.round(usd).toLocaleString('en-US') : usd.toFixed(usd < 10 ? 2 : 1);
+    const sp = document.createElement('span');
+    sp.className = 'shop-price-usd';
+    sp.textContent = ` · ≈ US$${txt}`;
+    el.appendChild(sp);
+  });
+}
+renderUsdPrices();
+
 // HERO SLIDESHOW
 function runSlideshow(selector, counterId, interval) {
   const imgs = document.querySelectorAll(selector);
@@ -39,34 +63,26 @@ if (lb) {
   const lbName = document.getElementById('lbName');
   const lbPrice = document.getElementById('lbPrice');
   const lbMeta = document.getElementById('lbMeta');
-  const zoomables = document.querySelectorAll('.zoomable');
-  const items = Array.from(zoomables).map(el => {
+  const zoomables = Array.from(document.querySelectorAll('.zoomable'));
+  let cur = 0;
+  const render = i => {
+    const el = zoomables[i];
     const img = el.querySelector('img');
     const card = el.closest('.shop-card');
     const name = card && card.querySelector('.shop-name');
     const price = card && card.querySelector('.shop-price');
-    const meta = card ? Array.from(card.querySelectorAll('.shop-meta li')).map(li => li.textContent.trim()) : [];
-    return {
-      src: img ? img.src : '',
-      name: name ? name.textContent.trim() : '',
-      price: price ? price.innerHTML.trim() : '',
-      meta
-    };
-  });
-  let cur = 0;
-  const render = i => {
-    const it = items[i];
-    lbImg.src = it.src;
-    lbC.textContent = `${i+1} / ${items.length}`;
-    const hasInfo = it.name || it.price || it.meta.length;
+    const meta = card ? Array.from(card.querySelectorAll('.shop-meta li')) : [];
+    lbImg.src = img ? img.src : '';
+    lbC.textContent = `${i+1} / ${zoomables.length}`;
+    const hasInfo = name || price || meta.length;
     lbInfo.classList.toggle('visible', !!hasInfo);
-    lbName.textContent = it.name;
-    lbPrice.innerHTML = it.price;
-    lbMeta.innerHTML = it.meta.map(m => `<li>${m}</li>`).join('');
+    lbName.textContent = name ? name.textContent.trim() : '';
+    lbPrice.innerHTML = price ? price.innerHTML.trim() : '';
+    lbMeta.innerHTML = meta.map(li => `<li>${li.textContent.trim()}</li>`).join('');
   };
   const open = i => { cur = i; render(i); lb.classList.add('open'); document.body.style.overflow = 'hidden'; };
   const close = () => { lb.classList.remove('open'); document.body.style.overflow = ''; };
-  const navi = d => { cur = (cur + d + items.length) % items.length; render(cur); };
+  const navi = d => { cur = (cur + d + zoomables.length) % zoomables.length; render(cur); };
   zoomables.forEach((el, i) => el.addEventListener('click', e => { e.preventDefault(); open(i); }));
   document.getElementById('lbClose').addEventListener('click', close);
   document.getElementById('lbPrev').addEventListener('click', () => navi(-1));
